@@ -3,33 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Flashing Lights</title>
-        <style>
-            body {
-                margin: 0;
-            }
-            /* credit for fullscreen video style: https://stackoverflow.com/questions/23248441/resizing-video-element-to-parent-div */
-            video {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                min-width: 100%;
-                min-height: 100%;
-                width: auto;
-                height: auto;
-                z-index: -100;
-                background-size: cover;
-                overflow: hidden;
-            }
-            #black {
-                background-color: black;
-                height: 100vh;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="flashinglights.css" />
     </head>
     <body>
         <div id="black"></div>
-        <!-- video may change to a canvas to modify the pixels -->
-        <!-- also, need to get video in higher quality and smaller size -->
+        <canvas></canvas>
         <video src="flashinglights.mp4" autoplay muted loop></video>
         <audio src="flashinglights.mp3" autoplay></audio>
         <script type="text/javascript" src="flashinglights.js"></script>
