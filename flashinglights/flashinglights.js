@@ -7,11 +7,15 @@ const canvas = document.querySelector("canvas");
 const context = canvas.getContext('2d');
 
 // setup stuff. canvas size/scale, video, etc.
+let width;
+let height;
 function setup() {
-    canvas.width = window.screen.width;
-    canvas.height = window.screen.height;
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
+    //canvas.width = window.innerWidth;
+    //canvas.height = window.innerHeight;
+    width = window.innerHeight;
+    height = window.innerHeight;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
     let scale = window.devicePixelRatio;
     canvas.width = width * scale;
     canvas.height = height * scale;
@@ -47,10 +51,10 @@ function flash() {
 
 // drawing video and gradient images to canvas
 function draw() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, width, height);
+    context.drawImage(video, 0, 0, width, height);
     if (img !== null) {
-        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+        context.drawImage(img, 0, 0, width, height);
     }
     context.globalCompositeOperation = "color";
 
