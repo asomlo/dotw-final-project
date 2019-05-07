@@ -28,7 +28,7 @@ function init() {
 function animate() {
     // move much more slowly to more closely match tempo of song
     if (frame === 5) {
-        for (let j = 0; j < 10000; j += 2000) {
+        for (let j = 0; j < 10000; j += 1000) {
             let nextRow = (row + j) % 10000;
             for (let i = nextRow; i < nextRow + 100; i++) {
                 plane.geometry.vertices[i].z = 0;
